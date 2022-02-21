@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/nicepage.css')}}" media="screen">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Inicio.css')}}" media="screen">
+    <title class="pre">Predicción</title>
+  </head>
+  <body  background="static/images/huellas.png">
+    <h1 style="text-align:center;">Su Perro Es...</h1>
+    <div >
+      {% if prediction %}
+      <img Border=5 style="display:block; margin:auto;border: 5px;" 
+        src="{{ url_for('display_image', filename=filename) }}"
+        height="400px"
+        width="400px"
+      />
+      <h3 style="text-align:center;"> <i> {{prediction}} </i></h3>
+      {% endif %}
+    </div>
+    <br />
+    <br />
+    <div class="page">
+      {% for table in info %}
+      <h2 style="text-align:center;">Información De Interés</h2>
+      {{ table|safe }} {% endfor %}
+    </div>
+  </body>
+</html>
