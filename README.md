@@ -20,4 +20,4 @@ The data directory structure I used was:
   * index.py
 
 # Performance
-
+Test accuracy: 0.9565
